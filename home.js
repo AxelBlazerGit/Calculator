@@ -19,8 +19,14 @@ rtClock();
 // calculator
 const display=document.getElementById("calcDisplay")
 function show(input) {
+    const lastChar = display.value.slice(-1);
+    const operators = ['+', '-', '/', '×'];
+    if (operators.includes(lastChar) && operators.includes(input)) {
+        return;
+    }
     display.value += input;
 }
+
 function clearDisp(){
     display.value=""
 }
