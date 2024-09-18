@@ -104,7 +104,3 @@ function sw() {
         setTimeout(sw, 4);
     }
 }
-
-
-
-
