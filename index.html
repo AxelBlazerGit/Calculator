@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>broCodeJS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- user greeting -->
+     <h1>hola amigo!</h1>
+    <label>username: </label>
+    <input type="text" id="username">
+    <button id="submit">submit!</button>
+    <p id="p0"></p>
+    <br><hr><br>
+    <!-- circle mensuration -->
+    <h1 id="h10">Circle Mensuration!</h1>
+    <label >radius : </label>
+    <input type="text" id="radius">
+    <button id="circleBtn">submit!</button>
+    <h1 id="circArea"></h1>
+    <br><hr><br>
+    <!-- counter -->
+     <div class="countSection">
+        <label id="count">0</label><br>
+        <button id="dec" class="countbtn">-</button>
+        <button id="reset" class="countbtn">!</button>
+        <button id="inc" class="countbtn">+</button>
+     </div>
+     <!-- random num generator -->
+      <h1>Random Num Generator!</h1>
+      <label id="randm"> choose minimum number :</label>
+      <input id="minm">
+      <br>
+      <label id="randm"> choose maximum number :</label>
+      <input id="maxm">
+      <button id="generateRandom" class="countbtn">Generate!</button>
+      <p id="randomNum"></p>
+      <br><hr><br>
+      <!-- dice img generator -->
+      <div class="diceRoll">
+        <h1>Dice Roller!</h1>
+        <label># of dice : </label>
+        <input type="number" id="numDice" value="1" min="1">
+        <button onclick="rollDice()">Roll Dice</button>
+        <div id="diceResult"></div>
+        <div id="diceImages"></div>
+    </div>
+    <br><hr><br>
+    <!-- clock -->
+     <div class="clockBody">
+        <h1>time dekh bhai</h1>
+        <p id="Time"></p>
+     </div>
+     <br><hr><br>
+
+
+     <!-- stopwatch -->
+      <div class="stopwatchBody">
+        <p id="sw"></p>
+        <button id="swstart">START</button>
+        <button id="swstop">STOP</button>
+        <button id="swreset">RESET</button>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
