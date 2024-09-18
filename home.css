@@ -2,30 +2,66 @@ body{
     background-color: rgb(35, 34, 34);
     color:chartreuse
 }
-#count{
-    display:block;
-    text-align: center;
-    font-size: 10em;
+.clockBody{
+    display: flex;
+    justify-content: space-around;
+    font-size:3.2em;
 }
-.countbtn{
-    color:beige;
-    padding:10px 20px;
-    font-size: 1.5em;
-    background-color: hsl(214,100%,74%);
+.calculator {
+    width: 220px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+#calcDisplay {
+    /* color:blue; */
+    background-color: #7c6d6d;
+    width: 100%;
+    height: 40px;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color .25s;
+    box-sizing: border-box;
 }
-.countbtn:hover{
-    background-color: rgb(185, 26, 113);
+.calcButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
 }
-.countSection{
+.calcButtons button {
+    color:white;
+    flex: 1 0 21%;
+    height: 50px; 
+    font-size: 18px;
+    border: 1px solid #320404;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #730808;
     text-align: center;
 }
-#diceImages{
-    display: inline-block;
-    background-color: darkgray;
+.calcButtons button:nth-child(4n) {
+    background-color: #36f415;
 }
-#numDice {
-    width: 50px; 
-  }
+.calcButtons button:hover {
+    background-color: #e0e0e0;
+}
+.backspace {
+    /* filter: invert(100%); */
+    background-image: url('/assets/backspace.svg'); 
+    background-size: 70% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
