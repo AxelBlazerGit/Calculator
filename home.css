@@ -1,67 +1,126 @@
-body{
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
     background-color: rgb(35, 34, 34);
-    color:chartreuse
-}
-.clockBody{
+    color: chartreuse;
+    height: 100vh;
     display: flex;
-    justify-content: space-around;
-    font-size:3.2em;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Calculator */
 .calculator {
-    width: 220px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Use 80% of the viewport height */
+    width: 50%;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+/* Responsive Width */
+@media (max-width: 1024px) {
+    .calculator {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        width: 95%;
+    }
+}
+
+/* Display Screen */
 #calcDisplay {
-    /* color:blue; */
     background-color: #7c6d6d;
     width: 100%;
-    height: 40px;
-    font-size: 24px;
-    text-align: right;
-    margin-bottom: 10px;
+    height: 15%;
+    font-size: 3vw;
+    text-align: left;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+/* Scale display for small screens */
+@media (max-width: 768px) {
+    #calcDisplay {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    #calcDisplay {
+        font-size: 6vw;
+    }
+}
+
+/* Button Container */
 .calcButtons {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1; /* Make it take the full remaining space */
     gap: 4px;
+    justify-content: space-between;
 }
-.calcButtons button {
-    color:white;
-    flex: 1 0 21%;
-    height: 50px; 
-    font-size: 18px;
-    border: 1px solid #320404;
-    border-radius: 50%;
-    box-sizing: border-box;
-    background-color: #730808;
-    text-align: center;
-}
-.calcButtons button:nth-child(4n) {
-    background-color: #36f415;
-}
-.calcButtons button:hover {
-    background-color: #e0e0e0;
-}
-.backspace {
-    /* filter: invert(100%); */
-    background-image: url('assets/backspace.svg'); 
-    background-size: 70% 60%;
-    background-repeat: no-repeat;
-    background-position: center;
 
-    width: 45px;
-    height: 45px;
-    border: none;
+/* Buttons */
+.calcButtons button {
+    flex: 1 0 21%;
+    height: 20%;
+    font-size: 2vw;
+    border: 1px solid #320404;
+    border-radius: 10px;
+    background-color: #22129c;
+    color: white;
+    text-align: center;
     cursor: pointer;
 }
 
+/* Scale buttons for smaller screens */
+@media (max-width: 768px) {
+    .calcButtons button {
+        font-size: 3vw;
+    }
+}
 
+@media (max-width: 480px) {
+    .calcButtons button {
+        font-size: 4vw;
+    }
+}
 
+/* Make last column buttons distinct */
+.calcButtons button:nth-child(4n) {
+    background-color: darkslategray;
+}
+
+.calcButtons button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Backspace Button */
+.backspace {
+    background-color: #131311;
+    background-size: 70% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}

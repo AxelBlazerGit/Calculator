@@ -7,41 +7,39 @@
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <!-- clock -->
-     <div class="clockBody">
-        <span id="Date"></span>
-        <span id="Time"></span>
-     </div>
-     <br><hr><br>
-     <!-- calculator -->
-     <div class="calculator">
-      <input readonly id="calcDisplay">
-      <div class="calcButtons">
-          <button onclick="clearDisp()">C</button>
-          <button class="backspace" onclick="backspace()"></button>
-          <button onclick="show('^')">^</button>
-          <button onclick="show('/')">/</button>
-          <button onclick="show('7')">7</button>
-          <button onclick="show('8')">8</button>
-          <button onclick="show('9')">9</button>
-          <button onclick="show('×')">×</button>
-          <button onclick="show('4')">4</button>
-          <button onclick="show('5')">5</button>
-          <button onclick="show('6')">6</button>
-          <button onclick="show('-')">-</button>
-          <button onclick="show('1')">1</button>
-          <button onclick="show('2')">2</button>
-          <button onclick="show('3')">3</button>
-          <button onclick="show('+')">+</button>
-          <button onclick="show('00')">00</button>
-          <button onclick="show('0')">0</button>
-          <button onclick="show('.')">.</button>
-          <button onclick="calculate()">=</button>
-      </div>
-  </div>
+    <!-- Calculator -->
+    <div class="calculator">
+        <input readonly id="calcDisplay">
+        <div class="calcButtons">
+            <button class="clear">C</button>
+            <button class="backspace">
+                <img style="height: 20px;" src="/Calculator/assets/backspace.svg">
+            </button>
+            <button class="operator" data-value="^">^</button>
+            <button class="operator" data-value="+">+</button>
 
+            <button class="number" data-value="7">7</button>
+            <button class="number" data-value="8">8</button>
+            <button class="number" data-value="9">9</button>
+            <button class="operator" data-value="×">×</button>
+
+            <button class="number" data-value="4">4</button>
+            <button class="number" data-value="5">5</button>
+            <button class="number" data-value="6">6</button>
+            <button class="operator" data-value="-">-</button>
+
+            <button class="number" data-value="1">1</button>
+            <button class="number" data-value="2">2</button>
+            <button class="number" data-value="3">3</button>
+            <button class="operator" data-value="+">+</button>
+
+            <button class="number" data-value="00">00</button>
+            <button class="number" data-value="0">0</button>
+            <button class="number" data-value=".">.</button>
+            <button class="equals">=</button>
+        </div>
+    </div>
 
     <script src="home.js"></script>
-
 </body>
 </html>

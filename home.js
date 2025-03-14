@@ -1,39 +1,30 @@
-// clock
-function rtClock() {
-    var currentdate = new Date(); 
-    var day = String(currentdate.getDate()).padStart(2, '0');
-    var month = String(currentdate.getMonth() + 1).padStart(2, '0');
-    var year = String(currentdate.getFullYear()).padStart(4, '0');
-    var date = day + "/" + month + "/" + year;
-    var h = String(currentdate.getHours()).padStart(2, '0');
-    var m = String(currentdate.getMinutes()).padStart(2, '0');
-    var s = String(currentdate.getSeconds()).padStart(2, '0');
-    var clock = document.getElementById("Time");
-    var ddate = document.getElementById("Date");
-    clock.textContent = h + ":" + m + ":" + s
-    ddate.textContent=date
-    setTimeout(rtClock, 1000);
-}
-rtClock();
+// Calculator functionality
+const display = document.getElementById("calcDisplay");
+const buttons = document.querySelectorAll(".calcButtons button");
 
-// calculator
-const display=document.getElementById("calcDisplay")
-function show(input) {
-    const lastChar = display.value.slice(-1);
-    const operators = ['+', '-', '/', '×', '^'];
-    if (display.value === '' && operators.includes(input)) {
-        return;
-    }
-    if (operators.includes(lastChar) && operators.includes(input)) {
-        return;
-    }
-    display.value += input;
+// Event listener for button clicks
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const value = button.dataset.value;
+        
+        if (button.classList.contains("number") || button.classList.contains("operator")) {
+            display.value += value;
+        } else if (button.classList.contains("clear")) {
+            clearDisp();
+        } else if (button.classList.contains("backspace")) {
+            backspace();
+        } else if (button.classList.contains("equals")) {
+            calculate();
+        }
+    });
+});
+
+// Clear display
+function clearDisp() {
+    display.value = "";
 }
 
-
-function clearDisp(){
-    display.value=""
-}
+// Evaluate expression
 function calculate() {
     try {
         let expression = display.value.replace(/\^/g, '**').replace("×", '*');
@@ -42,6 +33,8 @@ function calculate() {
         display.value = "ERROR!";
     }
 }
+
+// Remove last character (backspace)
 function backspace() {
     display.value = display.value.slice(0, -1);
 }
