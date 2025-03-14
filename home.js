@@ -1,8 +1,6 @@
-// Calculator functionality
 const display = document.getElementById("calcDisplay");
 const buttons = document.querySelectorAll(".calcButtons button");
 
-// Event listener for button clicks
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const value = button.dataset.value;
@@ -19,12 +17,10 @@ buttons.forEach(button => {
     });
 });
 
-// Clear display
 function clearDisp() {
     display.value = "";
 }
 
-// Evaluate expression
 function calculate() {
     try {
         let expression = display.value.replace(/\^/g, '**').replace("×", '*');
@@ -34,7 +30,6 @@ function calculate() {
     }
 }
 
-// Remove last character (backspace)
 function backspace() {
     display.value = display.value.slice(0, -1);
 }
